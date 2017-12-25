@@ -24,7 +24,7 @@ public class Main {
         String boardSize = sc.nextLine();
         String[] dimension = boardSize.split(" ");
 
-        while (dimensionValidation(dimension) == false) {
+        while (!dimensionValidation(dimension)) {
             System.out.println("Width and height need to be integers. Input 2 integers");
             boardSize = sc.nextLine();
             dimension = boardSize.split(" ");
@@ -45,13 +45,13 @@ public class Main {
 
         char[] inputArray = input.toCharArray();
 
-        if(boardValidation(height, width, inputArray) == false)
+        if(!boardValidation(height, width, inputArray))
         {
             System.out.println("There are not enough pentominoes. The solution cannot be found");
             return;
         }
 
-        while(pentominoesValidation(inputArray) == false) {
+        while(!pentominoesValidation(inputArray)) {
             System.out.println("Invalid input. Try again:");
 
             input = sc.nextLine();
